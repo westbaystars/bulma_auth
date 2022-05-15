@@ -32,3 +32,5 @@ bulma_auth-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Ignore Atom's Elixir plugin build directory
+/.elixir_ls

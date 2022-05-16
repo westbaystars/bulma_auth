@@ -7,7 +7,7 @@ defmodule BulmaAuth.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
+      compilers: [:gettext] ++ Mix.compilers() ++ [:surface],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -51,7 +51,11 @@ defmodule BulmaAuth.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:dart_sass, "~> 0.5.0", only: :dev},
-      {:bulma, "0.9.3"}
+      {:bulma, "0.9.3"},
+      {:surface, "~> 0.7.4"},
+      {:surface_font_awesome, "~> 0.2.4"},
+      {:surface_formatter, "~> 0.7.5", only: :dev},
+      {:surface_bulma, "~> 0.4.0"}
     ]
   end
 

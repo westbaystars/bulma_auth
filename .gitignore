@@ -34,3 +34,6 @@ npm-debug.log
 
 # Ignore Atom's Elixir plugin build directory
 /.elixir_ls
+
+# Ignore generated js hook files for components
+assets/js/_hooks/

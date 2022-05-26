@@ -10,10 +10,10 @@ defmodule BulmaAuthWeb.UserRegistrationControllerTest do
       assert response =~ "<h1 class=\"title is-1\">Register</h1>"
       assert response =~ "Log in</a>"
       assert response =~ "Register</a>"
-      assert response =~ "name=\"user[email]\""
-      assert response =~ "name=\"user[password]\""
-      refute response =~ "name=\"email\""
-      refute response =~ "name=\"password\""
+      assert response =~ ~s(name="user[email]")
+      assert response =~ ~s(name="user[password]")
+      refute response =~ ~s(name="email")
+      refute response =~ ~s(name="password")
     end
 
     test "redirects if already logged in", %{conn: conn} do
@@ -50,7 +50,7 @@ defmodule BulmaAuthWeb.UserRegistrationControllerTest do
         })
 
       response = html_response(conn, 200)
-      assert response =~ "<h1 class=\"title is-1\">Register</h1>"
+      assert response =~ ~s(<h1 class="title is-1">Register</h1>)
       assert response =~ "must have the @ sign and no spaces"
       assert response =~ "should be at least 12 character"
     end

@@ -13,9 +13,9 @@ defmodule BulmaAuthWeb.UserConfirmationControllerTest do
     test "renders the resend confirmation page", %{conn: conn} do
       conn = get(conn, Routes.user_confirmation_path(conn, :new))
       response = html_response(conn, 200)
-      assert response =~ "<h1 class=\"title is-1\">Resend confirmation instructions</h1>"
-      assert response =~ "name=\"user[email]\""
-      refute response =~ "name=\"email\""
+      assert response =~ ~s(<h1 class="title is-1">Resend confirmation instructions</h1>)
+      assert response =~ ~s(name="user[email]")
+      refute response =~ ~s(name="email")
     end
   end
 
@@ -61,7 +61,7 @@ defmodule BulmaAuthWeb.UserConfirmationControllerTest do
     test "renders the confirmation page", %{conn: conn} do
       conn = get(conn, Routes.user_confirmation_path(conn, :edit, "some-token"))
       response = html_response(conn, 200)
-      assert response =~ "<h1 class=\"title is-1\">Confirm account</h1>"
+      assert response =~ ~s(<h1 class="title is-1">Confirm account</h1>)
 
       form_action = Routes.user_confirmation_path(conn, :update, "some-token")
       assert response =~ "action=\"#{form_action}\""

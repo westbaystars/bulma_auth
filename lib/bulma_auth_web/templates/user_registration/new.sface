@@ -1,0 +1,22 @@
+<Title size="1">Register</Title>
+
+<Form :let={form: f} for={@changeset} action="/users/register" method="POST">
+  {#if @changeset.action}
+    <article class="message is-medium is-danger">
+      <p class="message-body">Oops, something went wrong! Please check the errors below.</p>
+    </article>
+  {/if}
+
+  <!-- :email field -->
+  <EmailInput form={f} field={:email} icon_left="envelope" placeholder="Your e-mail address" opts={[required: true, autofocus: true]}/>
+
+  <!-- :password field -->
+  <PasswordInput form={f} field={:password} icon_left="lock" placeholder="Password must be at least 12 characters" opts={[required: true]}/>
+
+  <Submit type="submit" color="primary">Register</Submit>
+</Form>
+
+<p>
+  <Link href="/users/log_in">Log in</Link> |
+  <Link href="/users/reset_password">Forgot your password?</Link>
+</p>

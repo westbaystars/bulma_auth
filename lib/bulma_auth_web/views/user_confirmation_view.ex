@@ -24,9 +24,14 @@ defmodule BulmaAuthWeb.UserConfirmationView do
     <Title size="1">Resend confirmation instructions</Title>
 
     <Form for={:user} action="/users/confirm/" method="POST" :let={form: f}>
-
       <!-- :email field -->
-      <EmailInput form={f} field={:email} icon_left="envelope" opts={[required: true]} placeholder="Your e-mail address"/>
+      <EmailInput
+        form={f}
+        field={:email}
+        icon_left="envelope"
+        opts={[required: true]}
+        placeholder="Your e-mail address"
+      />
 
       <Submit type="submit" color="primary">Confirm my account</Submit>
     </Form>

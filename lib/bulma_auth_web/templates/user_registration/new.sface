@@ -8,10 +8,22 @@
   {/if}
 
   <!-- :email field -->
-  <EmailInput form={f} field={:email} icon_left="envelope" placeholder="Your e-mail address" opts={[required: true, autofocus: true]}/>
+  <EmailInput
+    form={f}
+    field={:email}
+    icon_left="envelope"
+    placeholder="Your e-mail address"
+    opts={[required: true, autofocus: true]}
+  />
 
   <!-- :password field -->
-  <PasswordInput form={f} field={:password} icon_left="lock" placeholder="Password must be at least 12 characters" opts={[required: true]}/>
+  <PasswordInput
+    form={f}
+    field={:password}
+    icon_left="lock"
+    placeholder="Password must be at least 12 characters"
+    opts={[required: true]}
+  />
 
   <Submit type="submit" color="primary">Register</Submit>
 </Form>

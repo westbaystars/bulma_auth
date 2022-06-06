@@ -1,0 +1,10 @@
+<Title size="1">Confirm account</Title>
+
+<Form for={:user} action={"/users/confirm/#{@token}"} method="POST" :let={form: _f}>
+  <Submit type="submit" color="primary">Confirm my account</Submit>
+</Form>
+
+<p>
+  <Link href="/users/register">Register</Link> |
+  <Link href="/users/log_in">Log in</Link>
+</p>
